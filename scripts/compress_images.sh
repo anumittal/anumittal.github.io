@@ -17,7 +17,7 @@ get_file_size() {
 compress_image() {
     local input_file="$1"
     local output_file="$2"
-    local quality=85
+    local quality=99
     local max_size=1048576  # 1 MB in bytes
 
     # Reduce the quality iteratively until the file size is under 1 MB
