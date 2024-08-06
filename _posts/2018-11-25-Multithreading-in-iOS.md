@@ -59,14 +59,14 @@ Once you have decided which methodology you want to use, you need to decide the 
 `Order of Operation:`  
 Queues can be of two type: Serial Queue or Concurrent Queue which runs the tasks synchronously and asynchronously respectively
 <!--[Queues][queuesType]-->
-<img src="/assets/images/multithreadingiOS/queuesType.png" alt="Queues" width="100%"/>
+<img src="/assets/images/multithreadingiOS/queuesType.webp" alt="Queues" width="100%"/>
 
 `Priority of operations:`  
 Priority is defined as Quality of Service known as QoS and is of following four types:
 
 
 <!--[QoS][QoS]-->
-<img src="/assets/images/multithreadingiOS/QoS.jpg" alt="QoS" width="80%"/>
+<img src="/assets/images/multithreadingiOS/QoS.webp" alt="QoS" width="80%"/>
 
 Let’s now try to understand these operation by predicting the output of couple of examples.  
 Before trying to answer the output of code below, let’s look at the documentation of [dispatch_async](https://developer.apple.com/documentation/dispatch/1453057-dispatch_async) and [dispatch_sync](https://developer.apple.com/documentation/dispatch/dispatchqueue/1452870-sync):
@@ -97,7 +97,7 @@ Now try these out:
 In which order would these logs get printed? Suggest you to give it a try before looking at the solution.
 
 <!--[async Sync Quest][asyncSyncQuest]-->
-<img src="/assets/images/multithreadingiOS/async_sync_quest.jpg" alt="asyncSyncQuest" width="100%"/>
+<img src="/assets/images/multithreadingiOS/async_sync_quest.webp" alt="asyncSyncQuest" width="100%"/>
 
 What is given to us?  
 A new “queue” is created from global queue (which means it’s a concurrent queue).
@@ -106,7 +106,7 @@ We are given 2 dispatch task and few NSLog to be printed to understand the flow.
 So the output will be:  
 
 <!--[Async Sync Output][asyncSync]-->
-<img src="/assets/images/multithreadingiOS/async_sync.png" alt="asyncSync" width="100%"/>
+<img src="/assets/images/multithreadingiOS/async_sync.webp" alt="asyncSync" width="100%"/>
 
 As we were expecting the string after the async block is printed first, followed by the tasks under the block.
 The reason is quite clearly stated in the documentation, the async task return immediately after the submission. 
@@ -118,7 +118,7 @@ There is a twist: 🔀
 As we have created a concurrent queue from the global queue and added it to an async dispatch, sure it returns immediately after submission, but the whole point of creating a async dispatch is to allow multiple threads to execute concurrently. So here the main queue (the task of printing “anumittal %num”) and the task in the async dispatch queue can run simultaneously. So you can also expect output in this order:
 
 <!--[Async Sync Output Random][asyncSyncRandom]-->
-<img src="/assets/images/multithreadingiOS/async_sync_random.png" alt="asyncSyncRandom" width="100%"/>
+<img src="/assets/images/multithreadingiOS/async_sync_random.webp" alt="asyncSyncRandom" width="100%"/>
 
 Making sense?
 
@@ -126,7 +126,7 @@ Similarly, now predict the output if instead of dispatch_async in the first exam
 Once again before looking at solution, try to answer it yourself.
 
 <!--[sync sync Output][syncSync]-->
-<img src="/assets/images/multithreadingiOS/sync_sync.png" alt="syncSync" width="100%"/>
+<img src="/assets/images/multithreadingiOS/sync_sync.webp" alt="syncSync" width="100%"/>
 
 
 As the documentation says: “this function does not return until the block has finished” 
@@ -134,13 +134,13 @@ In the sync_sync block, everything happens in the most calmest way. :blush: it p
 
 But suppose the inner queue was async then it would immediately return and line after 45 and after 40 will execute simultaneously.
 <!--[sync async Output][syncAsync]-->
-<img src="/assets/images/multithreadingiOS/sync_async.png" alt="syncAsync" width="100%"/>
+<img src="/assets/images/multithreadingiOS/sync_async.webp" alt="syncAsync" width="100%"/>
 
 Last variant would be when both the queues are dispatch_async. 😃  
 
 I am sure you must have guessed the output.
 <!--[Async async Output][asyncAsync]-->
-<img src="/assets/images/multithreadingiOS/async_async.png" alt="asyncAsync" width="100%"/>
+<img src="/assets/images/multithreadingiOS/async_async.webp" alt="asyncAsync" width="100%"/>
 
 
 It will be all concurrent.
@@ -163,19 +163,19 @@ You should always resist passing same queue (especially a serial queue) to multi
 
 For example.
 <!--[Serial Queue Deadlock][serialQueueDeadlock]-->
-<img src="/assets/images/multithreadingiOS/serialQueueDeadlock.png" alt="serialQueueDeadlock" width="100%"/>
+<img src="/assets/images/multithreadingiOS/serialQueueDeadlock.webp" alt="serialQueueDeadlock" width="100%"/>
 
 The code leads to deadlock condition as, the outer async operation waits for the inner block to start and complete, whereas the inner block will not start until the task in “queue” is completed. 
 
 Where as works fine with concurrent queue :
 <!--[new concurrent queue][newConcurrentQueue]-->
-<img src="/assets/images/multithreadingiOS/newConcurrentQueue.png" alt="newConcurrentQueue" width="100%"/>
+<img src="/assets/images/multithreadingiOS/newConcurrentQueue.webp" alt="newConcurrentQueue" width="100%"/>
 
 *Just to emphasise, this will work but it is not preferred to use the same queue*
 
 Lastly a good to know example of deadlock:
 <!--[smallestDeadlock][smallestDeadlock]-->
-<img src="/assets/images/multithreadingiOS/smallestDeadlock.png" alt="smallestDeadlock" width="100%"/>
+<img src="/assets/images/multithreadingiOS/smallestDeadlock.webp" alt="smallestDeadlock" width="100%"/>
 This is claimed to be the shortest code to create a deadlock. I hope by now you must be able to think in the direction to answer as to why would this create a deadlock.
 
 `Hint:` main queue is a serial queue, this code is trying to dispatch the new code block synchronously on the same queue which is running & waiting on the dispatch_sync.
@@ -187,14 +187,14 @@ In the next blog, we shall look into locks and the most famous readers/writers p
 Thanks for reading. 👓
 
 
-[smallestDeadlock]: /assets/images/multithreadingiOS/smallestDeadlock.png
-[newConcurrentQueue]: /assets/images/multithreadingiOS/newConcurrentQueue.png
-[serialQueueDeadlock]: /assets/images/multithreadingiOS/serialQueueDeadlock.png
-[asyncAsync]: /assets/images/multithreadingiOS/async_async.png
-[queuesType]: /assets/images/multithreadingiOS/queuesType.png
-[QoS]: /assets/images/multithreadingiOS/QoS.jpg
-[asyncSyncQuest]: /assets/images/multithreadingiOS/async_sync_quest.jpg
-[asyncSync]: /assets/images/multithreadingiOS/async_sync.png
-[asyncSyncRandom]: /assets/images/multithreadingiOS/async_sync_random.png
-[syncAsync]: /assets/images/multithreadingiOS/sync_async.png
-[syncSync]: /assets/images/multithreadingiOS/sync_sync.png
+[smallestDeadlock]: /assets/images/multithreadingiOS/smallestDeadlock.webp
+[newConcurrentQueue]: /assets/images/multithreadingiOS/newConcurrentQueue.webp
+[serialQueueDeadlock]: /assets/images/multithreadingiOS/serialQueueDeadlock.webp
+[asyncAsync]: /assets/images/multithreadingiOS/async_async.webp
+[queuesType]: /assets/images/multithreadingiOS/queuesType.webp
+[QoS]: /assets/images/multithreadingiOS/QoS.webp
+[asyncSyncQuest]: /assets/images/multithreadingiOS/async_sync_quest.webp
+[asyncSync]: /assets/images/multithreadingiOS/async_sync.webp
+[asyncSyncRandom]: /assets/images/multithreadingiOS/async_sync_random.webp
+[syncAsync]: /assets/images/multithreadingiOS/sync_async.webp
+[syncSync]: /assets/images/multithreadingiOS/sync_sync.webp
