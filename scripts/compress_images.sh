@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# Function to get file size in bytes
+get_file_size() {
+    local file="$1"
+    if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        stat -c%s "$file"
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        stat -f%z "$file"
+    else
+        echo "Unsupported OS"
+        exit 1
+    fi
+}
+
 # Function to compress an image to be under 1 MB
 compress_image() {
     local input_file="$1"
@@ -9,9 +22,9 @@ compress_image() {
 
     # Reduce the quality iteratively until the file size is under 1 MB
     while : ; do
-        convert "$input_file" -quality "$quality" "$output_file"
+        magick "$input_file" -quality "$quality" "$output_file"
         local file_size
-        file_size=$(stat -c%s "$output_file")
+        file_size=$(get_file_size "$output_file")
         if [ "$file_size" -le "$max_size" ] || [ "$quality" -le 10 ]; then
             break
         fi
@@ -46,7 +59,10 @@ input_directory="$1"
 for img in "$input_directory"/*.png "$input_directory"/*.jpg; do
     if [ -f "$img" ]; then
         output="${img%.*}.jpg"
-        compress_image "$img" "$output"
-        convert_to_webp "$output"
+        if compress_image "$img" "$output"; then
+            convert_to_webp "$output"
+        else
+            echo "Error! Could not process file $img"
+        fi
     fi
 done
