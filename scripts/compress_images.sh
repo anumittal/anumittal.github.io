@@ -34,9 +34,19 @@ convert_to_webp() {
     echo "Converted $input_file to $output_file"
 }
 
-# Process each PNG and JPEG file in the current directory
-for img in *.png *.jpg; do
-    output="${img%.*}.jpg"
-    compress_image "$img" "$output"
-    convert_to_webp "$output"
+# Check if a directory is provided as an argument
+if [ -z "$1" ]; then
+    echo "Usage: $0 <directory>"
+    exit 1
+fi
+
+input_directory="$1"
+
+# Process each PNG and JPEG file in the specified directory
+for img in "$input_directory"/*.png "$input_directory"/*.jpg; do
+    if [ -f "$img" ]; then
+        output="${img%.*}.jpg"
+        compress_image "$img" "$output"
+        convert_to_webp "$output"
+    fi
 done
