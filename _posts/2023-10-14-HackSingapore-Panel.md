@@ -11,6 +11,7 @@ tags:
 ---
 
 On 20th May 2023, I got an opportunity to be a panelist at one of Singapore's most active hackathon community known as HackSingapore.
+<img src="/assets/images/HackSingapore/Title.webp" alt="Speaker" width="50%"/>
 
 #### What was the topic of the panel?
 The topic of the panel was “Importance of soft-skill in Engineering” where the focus was on the importance of soft skills such as communication, collaboration, and leadership in technical roles in the tech industry where I as a speakers shared examples of how these skills have been crucial to my success.
@@ -28,6 +29,9 @@ One of these leadership skills is engaging in a technical and constructive feedb
 
 In summary, soft skills are vital to my role as a staff engineer. They help me navigate diverse stakeholders, adapt my communication style, and create an environment that promotes collaboration, innovation, and growth. By improving these soft skills, I can lead and contribute to the success of my team and the projects we work on.
 
+
+<img src="/assets/images/HackSingapore/HackSingapore.jpeg" alt="Speaker" width="50%"/>
+
 #### How important has it been to network with people in the same organization, and also outside (attending conferences, giving talks)?
 Networking has been vital for my professional growth and development. Within my organization, networking has helped me connect with people with different skill sets, such as data analysts, operations experts, business professionals, product managers, and designers. This wide network has enabled me to grow vertically and horizontally, expanding my knowledge and capabilities. Interacting with experienced professionals has also given me valuable insights and perspectives, helping me learn faster and avoid reinventing the wheel. My depth of understanding the architecture helps me come up with solutions, but my breadth of experience helps me find the right solution. It’s a subtle but key distinction!
 
@@ -36,6 +40,8 @@ Additionally, networking within my organization has improved my efficiency and p
 Outside my organization, attending conferences and meetups has been key in connecting me with brilliant minds from various industries. These interactions have allowed me to exchange ideas, challenge boundaries, and learn from different approaches to problem-solving. Giving talks at conferences and mentoring others has given me an opportunity to contribute to the community and give back. This experience has not only increased my confidence but also deepened my own understanding as I prepare, teach, and answer questions from the audience.
 
 Networking has helped me forge valuable connections, access diverse perspectives, and accelerate my learning curve. Both within and outside my organization, networking has enhanced efficiency, teamwork, and continuous development. I strongly believe in the power of networking and its ability to create meaningful opportunities for personal and professional advancement.
+
+<img src="/assets/images/HackSingapore/OnStage.webp" alt="On Stage" width="50%"/>
 
 #### What is one piece of "soft skills" advice would you give to folks interested in becoming a staff engineer?
 My soft skills advice for aspiring staff engineers is to embrace the shades of grey. Recognise that complex engineering scenarios are not black and white.
