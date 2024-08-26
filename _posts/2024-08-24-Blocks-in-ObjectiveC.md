@@ -1,3 +1,15 @@
+---
+layout: post
+title: Blocks in ObjectiveC
+date: '2024-08-24T1:30:00.001-07:00'
+author: Anu Mittal
+categories: 'anu'
+subclass: post
+tags:
+- Tech 
+- Swift
+---
+
 While covering examples and use case of [Closure in Swift](https://anumittal.in/Closure-in-swift) article I thought of adding a short article on uses of blocks in Objective-C. Closures are referred to as "blocks" in ObjC. Blocks are a powerful feature that allows developers to encapsulate code and pass it around, similar to functions or methods but with the ability to capture state from the surrounding context. Some common use cases for using blocks in Objective-C are:
 
 ### 1. **Completion Handlers**
