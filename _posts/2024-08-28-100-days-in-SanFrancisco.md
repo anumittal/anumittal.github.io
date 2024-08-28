@@ -1,17 +1,17 @@
 ---
 layout: post
 title: San Francisco - 100 days and Counting
-date: '2024-08-28T11:40:00.005-07:00'
+date: '2024-08-27T1:30:00.001-07:00'
 author: Anu Mittal
 categories: 'anu'
 subclass: post
 tags:
 - lifestyle
-- san-francisco
+- SanFrancisco
 ---
 
 # 100 Days in San Francisco
-<img src="/assets/images/MovingToSF/GoldenGate.webp" alt="Campus" width="100%"/>
+<img src="/assets/images/MovingToSF/GoldenGate.webp" alt="GoldenGate" width="100%"/>
 
 **5 years [later](/60-days-in-Singapore), I shifted to San Francisco, CA in May 2024. So, here is how my ~100 days in SF looks like.**
 
