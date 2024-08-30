@@ -205,9 +205,7 @@ In this example:
 By eliminating the need for explicit completion handlers, async/await simplifies the management of asynchronous code. However, closures still power much of the async/await machinery behind the scenes, maintaining their importance in the language’s concurrency model.
 
 ### References:
-- [Apple Developer:
-
- Concurrency](https://developer.apple.com/documentation/swift/concurrency)
+- [Apple Developer: Concurrency](https://developer.apple.com/documentation/swift/concurrency)
 - [WWDC 2021: Meet async/await in Swift](https://developer.apple.com/videos/play/wwdc2021/10132/)
 
 ## **5. Modern Uses of Closures and Delegates in iOS Development**

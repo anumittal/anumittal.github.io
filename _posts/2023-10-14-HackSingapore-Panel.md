@@ -30,7 +30,7 @@ One of these leadership skills is engaging in a technical and constructive feedb
 In summary, soft skills are vital to my role as a staff engineer. They help me navigate diverse stakeholders, adapt my communication style, and create an environment that promotes collaboration, innovation, and growth. By improving these soft skills, I can lead and contribute to the success of my team and the projects we work on.
 
 
-<img src="/assets/images/HackSingapore/HackSingapore.jpg" alt="Speaker" width="50%"/>
+<img src="/assets/images/HackSingapore/HackSingapore.jpg" alt="Speaker" width="70%"/>
 
 #### How important has it been to network with people in the same organization, and also outside (attending conferences, giving talks)?
 Networking has been vital for my professional growth and development. Within my organization, networking has helped me connect with people with different skill sets, such as data analysts, operations experts, business professionals, product managers, and designers. This wide network has enabled me to grow vertically and horizontally, expanding my knowledge and capabilities. Interacting with experienced professionals has also given me valuable insights and perspectives, helping me learn faster and avoid reinventing the wheel. My depth of understanding the architecture helps me come up with solutions, but my breadth of experience helps me find the right solution. It’s a subtle but key distinction!
