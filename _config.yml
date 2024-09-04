@@ -8,17 +8,17 @@ language: 'en-us'
 
 # Website info
 name: 'Life is about Exploring'
-description: 'Personal blogs'
+description: 'Blog about iOS learnings & personal talk experiences'
 
 # Author's info
 author: 'Anu Mittal'
 # edit 'categories' in the front matter of every post to match this username
 nickname: anu
-bio: 'Software Developer, GSoCer, Open Source Tech Enthusiast'
-location: 'Delhi, IN'
+bio: 'iOS Staff Engineer, Women Techmacker Ambassador'
+location: 'San Francisco, CA'
 
 url: 'https://anumittal.in'
-image: 'assets/images/anu_profile.jpg'
+image: 'assets/images/AnuMittalProfile.webp'
 
 short_url: 'anumittal.in/'
 google_analytics: UA-109855438-1
@@ -28,8 +28,8 @@ baseurl: ''
 
 # Permalinks
 permalink: /:title
-# permalink: /author/:username
-# permalink: /tag/:tag
+permalink: /author/:username
+permalink: /tag/:tag
 
 
 # gems and other configs
