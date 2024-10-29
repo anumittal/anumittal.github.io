@@ -326,10 +326,20 @@ This example highlights how `@escaping` allows closures to outlive the scope in 
 ### References:
 - [Swift Documentation: Closures](https://docs.swift.org/swift-book/LanguageGuide/Closures.html)
 
-## **8. Conclusion**
-
-The evolution of closures and delegates in iOS development reflects the broader trends in Swift and iOS programming. From Objective-C blocks and delegates to modern Swift closures and async/await, the syntax and capabilities have continuously improved, making asynchronous programming more intuitive and less error-prone.
-
-As Swift and iOS continue to evolve, we can expect further refinements and new patterns emerging around closures and delegates, solidifying their place as fundamental concepts in iOS development.
+## **Bonus**
+| Feature                | Async/Await                       | Combine                                | Closures                               | Delegate                               | RxSwift                               |
+|------------------------|-----------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
+| **Purpose**            | Handle asynchronous code with simpler syntax | Declarative framework for reactive programming | Pass code blocks as arguments           | Object-to-object communication         | Reactive programming for handling asynchronous code |
+| **Paradigm**           | Synchronous-like, imperative      | Functional, declarative                | Functional                             | Delegation, object-oriented            | Functional, reactive                  |
+| **Ease of Use**        | Easy to read and maintain         | Moderate complexity                    | Easy to moderate, depending on use case | Moderate                               | Can be complex for beginners          |
+| **Concurrency**        | Built-in Swift concurrency model  | Supports concurrency through Publishers and Subscribers | No built-in concurrency support, relies on GCD/NSOperation | No inherent concurrency                | Uses Schedulers to manage concurrency |
+| **Memory Management**  | Automatic                          | Automatic (Combine framework)          | Manual (capture lists to avoid retain cycles) | Needs manual care to prevent retain cycles | Requires usage of `DisposeBag` to manage memory   |
+| **Typical Usage**      | Handling async tasks (e.g., API calls) | Data streams, chaining asynchronous tasks | Simple callbacks, completion handlers  | Communication between two related objects | Observing and reacting to UI or data changes |
+| **Error Handling**     | `do-catch` with structured error handling | Built-in error propagation via `.catch()` | Manual error handling with optional/error types | Requires custom error handling         | Error handling using `.catchError()` and `.onError()` |
+| **Syntax**             | `async` and `await` keywords      | Operators like `map`, `flatMap`, `sink` | `{ (parameters) -> ReturnType in code }` | Method implementation                  | Operators like `map`, `flatMap`, `subscribe` |
+| **Readability**        | Very readable and intuitive       | Readable with practice, more verbose   | Can become cluttered in complex cases  | Readable for straightforward cases     | Less readable, especially with complex chains |
+| **Learning Curve**     | Low to moderate                   | Moderate to high                       | Low to moderate                        | Low                                     | High                                  |
+| **Framework Requirement** | Native Swift                     | Requires importing Combine             | Native Swift                           | Native Swift                           | Requires RxSwift library              |
+| **Examples**           | Fetching data from API with `await` | Handling UI changes reactively         | Button tap handler with a closure      | UITableView delegate methods           | Reacting to text field input changes  |
 
 Hope you find this article useful!! Thanks for reading. :) 
