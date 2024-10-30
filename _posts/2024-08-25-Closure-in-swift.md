@@ -342,4 +342,5 @@ This example highlights how `@escaping` allows closures to outlive the scope in 
 | **Framework Requirement** | Native Swift                     | Requires importing Combine             | Native Swift                           | Native Swift                           | Requires RxSwift library              |
 | **Examples**           | Fetching data from API with `await` | Handling UI changes reactively         | Button tap handler with a closure      | UITableView delegate methods           | Reacting to text field input changes  |
 
+
 Hope you find this article useful!! Thanks for reading. :) 
